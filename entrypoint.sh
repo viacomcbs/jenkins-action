@@ -8,21 +8,14 @@ token=$3
 job=$4
 parameters=$5
 
-echo $parameters
+$parameter=$(parameters)
 
 credential="$user:$token"
 jobPath="$url/$job"
 
-if [ -n $parameters ]
+if [ -n $parameter ]
 then
-    if [ $parameters == GITHUB_* ]
-    then
-        $parameter=$(parameters)
-        echo $parameter
-        jobPathParameter="$jobPath/buildWithParameters?$parameter"
-    else
-        jobPathParameter="$jobPath/buildWithParameters?$parameters"
-    fi
+    jobPathParameter="$jobPath/buildWithParameters?$parameters"
 else
     jobPathParameter=$jobPath
 fi
