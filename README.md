@@ -40,6 +40,7 @@ jobs:
 ```
 
 ## Improvements
+
 - [ ] Make it possible to use GITHUB_* vars
 
 
