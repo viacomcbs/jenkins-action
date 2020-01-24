@@ -21,7 +21,7 @@ inputs:
     default: '/job/test'
   parameters:
     description: 'Jenkins Parameters'
-    required: false
+    required: true
     default: 'test,test2'
 outputs:
   response:

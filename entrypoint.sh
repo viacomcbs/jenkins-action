@@ -8,13 +8,15 @@ token=$3
 job=$4
 parameters=$5
 
-$parameter=$(parameters)
-
 credential="$user:$token"
 jobPath="$url/$job"
 
 if [ -n $parameter ]
 then
+    if [ $parameters == "BRANCH" ]
+    then
+        parameters="BRANCH=$GITHUB_HEAD_REF"
+    fi
     jobPathParameter="$jobPath/buildWithParameters?$parameters"
 else
     jobPathParameter=$jobPath
