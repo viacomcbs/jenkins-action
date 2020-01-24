@@ -6,7 +6,6 @@
 
 ## USAGE
 
-
 ### GitHub Actions
 
 #### Inputs
@@ -39,6 +38,10 @@ jobs:
         parameters: {{ jenkins parameters for parametrized jobs }}
 
 ```
+
+## Improvements
+- [ ] Make it possible to use GITHUB_* vars
+
 
 [travis-image]: https://travis-ci.com/enflo/jenkins-action-parametrized.svg?branch=master
 [travis-url]: https://travis-ci.com/enflo/jenkins-action-parametrized
