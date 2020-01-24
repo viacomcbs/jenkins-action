@@ -16,6 +16,7 @@ jobPath="$url/$job"
 if [ -n $parameters ]
 then
     if [ $parameters == GITHUB_* ]
+    then
         $parameter=$(parameters)
         echo $parameter
         jobPathParameter="$jobPath/buildWithParameters?$parameter"
