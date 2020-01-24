@@ -11,7 +11,7 @@ parameters=$5
 credential="$user:$token"
 jobPath="$url/$job"
 
-if [ -n $parameter ]
+if [ -n $parameters ]
 then
     if [ $parameters == "BRANCH" ]
     then
