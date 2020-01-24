@@ -1,0 +1,12 @@
+dist: trusty
+
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - export VERSION=0.0.1
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - docker build --build-arg VERSION=$VERSION -t jenkins-action-parametrized:$VERSION -f Dockerfile .
+      - docker images
+      - docker tag jenkins-action-parametrized:$VERSION $DOCKER_USERNAME/jenkins-action-parametrized:$VERSION
+      - docker push $DOCKER_USERNAME/jenkins-action-parametrized:$VERSION

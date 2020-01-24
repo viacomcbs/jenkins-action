@@ -1,0 +1,40 @@
+# action.yml
+name: jenkins-action-parametrized
+author: Antoni Florit Homar
+description: github action, to be able to run jenkins jobs remotely with or without parameters
+inputs:
+  url:
+    description: 'Jenkins URL'
+    required: true
+    default: 'toniflorithomar.cat'
+  user:
+    description: 'Jenkins USER'
+    required: true
+    default: 'test'
+  token:
+    description: 'Jenkins USER TOCKEN'
+    required: true
+    default: 'test'
+  job:
+    description: 'Jenkins USER TOCKEN'
+    required: true
+    default: '/job/test'
+  parameters:
+    description: 'Jenkins USER'
+    required: false
+    default: 'test,test2'
+outputs:
+  response:
+    description: 'Jenkins cURL response'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.url }}
+    - ${{ inputs.user }}
+    - ${{ inputs.token }}
+    - ${{ inputs.job }}
+    - ${{ inputs.parameters }}
+branding:
+  icon: 'arrow-right-circle'
+  color: 'gray-dark'
