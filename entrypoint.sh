@@ -8,7 +8,7 @@ token=$3
 job=$4
 parameters=$5
 
-echo $(parameters)
+echo $parameters
 
 credential="$user:$token"
 jobPath="$url/$job"

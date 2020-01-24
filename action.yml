@@ -20,7 +20,7 @@ inputs:
     required: true
     default: '/job/test'
   parameters:
-    description: 'Jenkins USER'
+    description: 'Jenkins Parameters'
     required: false
     default: 'test,test2'
 outputs:
