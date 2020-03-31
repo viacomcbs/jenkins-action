@@ -19,8 +19,8 @@ then
     fi
 
     if [[ $job == *"buildWithParameters"* ]];
-        jobPathParameter="$jobPath?$parameters"
     then
+        jobPathParameter="$jobPath?$parameters"
     else
         jobPathParameter="$jobPath/buildWithParameters?$parameters"
     fi
