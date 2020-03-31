@@ -17,7 +17,13 @@ then
     then
         parameters="BRANCH=$GITHUB_HEAD_REF"
     fi
-    jobPathParameter="$jobPath/buildWithParameters?$parameters"
+
+    if [[ $job == *"buildWithParameters"* ]];
+        jobPathParameter="$jobPath?$parameters"
+    then
+    else
+        jobPathParameter="$jobPath/buildWithParameters?$parameters"
+    fi
 else
     jobPathParameter=$jobPath
 fi
